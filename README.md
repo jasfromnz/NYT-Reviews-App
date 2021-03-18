@@ -10,7 +10,7 @@ A web app that searches for and displays New York Times book reviews by book tit
 - New York Times Books API
 
 ## Screenshots
-![wireframe](#)
+![wireframe](./wireframe.png)
 
 ## Getting Started
 [Click here](#) to get started
