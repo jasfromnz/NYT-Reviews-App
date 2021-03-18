@@ -40,21 +40,26 @@ function render() {
         // display "unavailable" for an missing data
         const params = ['book_title', 'book_author', 'byline', 'publication_dt', 'summary', 'url'];
         params.forEach(function(key){
-            if (review[key] === ""){
-                review[key] = "Unavailable";
+            if (review[key] === ''){
+                review[key] = 'Unavailable';
             };
         });
-
+        console.log(typeof review.byline);
         return `
             <article class="card">
-                <h2>${review.book_title} by ${review.book_author}</h2>
-                <h3>review by: ${review.byline}, ${review.publication_dt}</h3>
-                <p id="summary">Summary: ${review.summary}</p>
-                <a href=${review.url} target="_blank">Link to Article</a>
+                <div id="header">
+                    <h2>${review.book_title} by ${review.book_author}</h2>
+                    <h3 id="byline">review by: ${review.byline.toLowerCase()}, ${review.publication_dt}</h3>
+                </div>
+                <div id="body">
+                    <p id="summary">Summary: ${review.summary}</p>
+                    <a href=${review.url} target="_blank">Link to Article</a>
+                </div>
             </article>
         `;
     });
 
+    
     $reviews.append(html);
 }
 

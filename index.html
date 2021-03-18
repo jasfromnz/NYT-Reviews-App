@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>NYT Book Reviews</title>
 </head>
+
 <body>
     <header>
         <h1>New York Times Book Reviews</h1>
@@ -18,13 +21,28 @@
     <main>
         <section class="reviews">
             <article class="card">
-                <h2>Beloved by Toni Morrison</h2>
-                <h3>review by: Review Author, 3/17/21</h3>
-                <p id="summary">In this essay, I will</p>
-                <p id="url">https://api.nytimes.com/svc/books/v3</p>
+                <div id="header">
+                    <h2>Americanah by Chimamanda Ngozi Adichie</h2>
+                    <h3>review by: Mike Peed, 2013-06-09</h3>
+                </div>
+                <div id="body">
+                    <p id="summary">Summary: In Chimamanda Ngozi Adichie’s new book, “Americanah,” the main characters find that race matters wherever they go.</p>
+                    <a id="url" href="http://www.nytimes.com/2013/06/09/books/review/americanah-by-chimamanda-ngozi-adichie.html">Link to Article</a>
+                </div>
+            </article>
+            <article class="card">
+                <div id="header">
+                    <h2>Americanah by Chimamanda Ngozi Adichie</h2>
+                    <h3>review by: Janet Maslin, 2013-05-20</h3>
+                </div>
+                <div id="body">
+                    <p id="summary">Summary: Being black, in America and Africa, draws a novelist’s scrutiny.</p>
+                    <a id="url" href="http://www.nytimes.com/2013/05/20/books/americanha-by-chimamanda-ngozi-adichie.html">Link to Article</a>
+                </div>
             </article>
         </section>
     </main>
     <footer>All Rights Reserved 2021</footer>
 </body>
+
 </html>
