@@ -16,39 +16,49 @@ let $input = $('#input');
 
 // event listeners
 
-console.log($submit);
 $submit.on('click', handleClick);
 
 // functions
 
 function getData() {
-    $.ajax(BASE_URL+userInput+API_KEY)
-        .then(function(data){
+    $.ajax(BASE_URL + userInput + API_KEY)
+        .then(function (data) {
             reviews = data.results;
             render();
-        }, function(error){
+        }, function (error) {
             alert(error);
         });
 }
 
 function render() {
-    const html = reviews.map(function(review){
-        if (review.summary === '') {
-            review.summary = 'Unavailable';
-        };
+    // clear previous results
+    $reviews.empty();
+
+    // create html elements for each result
+    const html = reviews.map(function (review) {
+        
+        // display "unavailable" for an missing data
+        const params = ['book_title', 'book_author', 'byline', 'publication_dt', 'summary', 'url'];
+        params.forEach(function(key){
+            if (review[key] === ""){
+                review[key] = "Unavailable";
+            };
+        });
+
         return `
             <article class="card">
                 <h2>${review.book_title} by ${review.book_author}</h2>
                 <h3>review by: ${review.byline}, ${review.publication_dt}</h3>
                 <p id="summary">Summary: ${review.summary}</p>
-                <p id="url">URL: ${review.url}</p>
+                <a href=${review.url} target="_blank">Link to Article</a>
             </article>
         `;
     });
+
     $reviews.append(html);
 }
 
-function handleClick(){
+function handleClick() {
     userInput = $input.val();
     getData();
 }

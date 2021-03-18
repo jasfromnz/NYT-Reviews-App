@@ -16,3 +16,5 @@ A web app that searches for and displays New York Times book reviews by book tit
 [Click here](#) to get started
 
 ## Future Enhancements
+- Add CSS Styling
+- Add search by author
