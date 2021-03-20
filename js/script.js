@@ -24,6 +24,7 @@ function getData() {
     $.ajax(BASE_URL + userInput + API_KEY)
         .then(function (data) {
             reviews = data.results;
+            console.log('data loaded');
             render();
         }, function (error) {
             alert(error);
@@ -65,5 +66,6 @@ function render() {
 
 function handleClick() {
     userInput = $input.val();
+    console.log(userInput);
     getData();
 }
