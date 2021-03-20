@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     background-color: aliceblue;
+    font-family: Verdana, Arial, sans-serif;
 }
 
 header {
@@ -31,6 +32,10 @@ input {
 
 #submit {
     width: 10%;
+}
+
+div#body {
+    font-size: 18px;
 }
 
 article {

@@ -24,7 +24,6 @@ function getData() {
     $.ajax(BASE_URL + userInput + API_KEY)
         .then(function (data) {
             reviews = data.results;
-            console.log('data loaded');
             render();
         }, function (error) {
             alert(error);
@@ -32,6 +31,14 @@ function getData() {
 }
 
 function render() {
+
+    // check if there are results
+    if (reviews.length < 1) {
+        console.log(reviews.length);
+        alert('No Results Found');
+        return;
+    };
+
     // clear previous results
     $reviews.empty();
 
@@ -66,6 +73,5 @@ function render() {
 
 function handleClick() {
     userInput = $input.val();
-    console.log(userInput);
     getData();
 }
