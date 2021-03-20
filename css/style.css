@@ -34,30 +34,59 @@ input {
     width: 10%;
 }
 
-div#body {
-    font-size: 18px;
+.reviews {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 article {
     border: 3px solid black;
     border-radius: 3%;
     margin: 10px;
-    padding: 5px;
     background-color: white;
+    width: 60vw;
 }
 
 article * {
     background-color: white;
 }
 
-div#header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+#header {
+    border-bottom: 3px solid black;
+    padding: 5px;
 }
 
 h2, h3 {
-    padding: 3px;
-    margin: 0px;
+    margin: 5px 0px 5px 10px;
     text-transform: capitalize;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+div#body {
+    font-size: 16px;
+    padding: 5px 5px 15px 5px;
+}
+
+#summary {
+    margin: 0;
+    padding: 10px;
+}
+
+#url {
+    padding: 10px;
+}
+
+footer {
+    position: absolute;
+    margin-bottom: 0;
 }
