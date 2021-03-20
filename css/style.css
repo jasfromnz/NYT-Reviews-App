@@ -4,20 +4,33 @@
 }
 
 header {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-div#input {
+h1 {
+    margin: 20px auto 20px auto;
+}
+
+div.input {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
 }
 
 input {
     background-color: white;
-    position: relative;
     margin: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+#input {
+    width: 30%;
+}
+
+#submit {
+    width: 10%;
 }
 
 article {
@@ -35,6 +48,7 @@ article * {
 div#header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 h2, h3 {
