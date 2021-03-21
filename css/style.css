@@ -1,23 +1,28 @@
 * {
     box-sizing: border-box;
-    background-color: aliceblue;
-    font-family: Verdana, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
     display: grid;
-    grid-template-rows: 170px 1fr 30px;
+    grid-template-rows: 200px 1fr 30px;
     height: 100vh;
+    /*background-image: linear-gradient(rgb(16, 146, 163), rgb(10, 82, 76));*/
+    margin: 0;
+    background-color: darkturquoise;
 }
 
 header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: white;
+    margin-bottom: 10px;
 }
 
 h1 {
     margin: 20px auto 20px auto;
+    font-size: 50px;
 }
 
 div.input {
@@ -28,7 +33,7 @@ div.input {
 input {
     background-color: white;
     margin: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 14px;
 }
 
@@ -50,6 +55,7 @@ article {
     margin: 10px;
     background-color: white;
     width: 60vw;
+    box-shadow: 10px 5px 5px darkcyan;
 }
 
 article * {
@@ -66,23 +72,23 @@ h2, h3 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 h3 {
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
 div#body {
-    font-size: 16px;
+    font-size: 18px;
     padding: 5px 5px 15px 5px;
 }
 
 #summary {
     margin: 0;
-    padding: 10px;
+    padding: 0px 10px 10px 10px;
 }
 
 #url {
