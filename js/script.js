@@ -20,6 +20,11 @@ $submit.on('click', handleClick);
 
 // functions
 
+function handleClick() {
+    userInput = $input.val();
+    getData();
+}
+
 function getData() {
     $.ajax(BASE_URL + userInput + API_KEY)
         .then(function (data) {
@@ -69,9 +74,4 @@ function render() {
 
     
     $reviews.append(html);
-}
-
-function handleClick() {
-    userInput = $input.val();
-    getData();
 }
