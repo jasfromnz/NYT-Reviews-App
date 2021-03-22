@@ -1,6 +1,7 @@
 // constant variables
 
-const BASE_URL = "https://api.nytimes.com/svc/books/v3/reviews.json?title=";
+const TITLE_URL = "https://api.nytimes.com/svc/books/v3/reviews.json?title=";
+const AUTHOR_URL = "https://api.nytimes.com/svc/books/v3/reviews.json?author=";
 const API_KEY = "&api-key=9KYhx592sZnxcKpcAq5NzytfNGc9jztp";
 
 // state variables
@@ -11,22 +12,42 @@ let reviews;
 // cached element references
 
 let $reviews = $('.reviews');
-let $submit = $('#submit');
-let $input = $('#input');
+let $titleSubmit = $('input.title:submit');
+let $titleInput = $('input.title:text');
+let $authorSubmit = $('input.author:submit');
+let $authorInput = $('input.author:text');
 
 // event listeners
 
-$submit.on('click', handleClick);
+$titleSubmit.on('click', handleTitleClick);
+$authorSubmit.on('click', handleAuthorClick);
 
 // functions
 
-function handleClick() {
-    userInput = $input.val();
-    getData();
+function handleTitleClick() {
+    userInput = $titleInput.val();
+    $titleInput.val('');
+    getTitleData();
 }
 
-function getData() {
-    $.ajax(BASE_URL + userInput + API_KEY)
+function handleAuthorClick() {
+    userInput = $authorInput.val();
+    $authorInput.val('');
+    getAuthorData();
+}
+
+function getTitleData() {
+    $.ajax(TITLE_URL + userInput + API_KEY)
+        .then(function (data) {
+            reviews = data.results;
+            render();
+        }, function (error) {
+            alert(error);
+        });
+}
+
+function getAuthorData()  {
+    $.ajax(AUTHOR_URL + userInput + API_KEY)
         .then(function (data) {
             reviews = data.results;
             render();
@@ -66,7 +87,7 @@ function render() {
                 </div>
                 <div id="body">
                     <p id="summary">Summary: ${review.summary}</p>
-                    <a href=${review.url} target="_blank">Link to Article</a>
+                    <a class="url" href=${review.url} target="_blank">Link to Article</a>
                 </div>
             </article>
         `;

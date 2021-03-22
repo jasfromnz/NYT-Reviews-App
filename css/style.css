@@ -34,15 +34,15 @@ input {
     background-color: white;
     margin: 5px;
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
-#input {
+input[type="text"] {
     width: 30%;
 }
 
-#submit {
-    width: 10%;
+input[type="submit"] {
+    width: 15%;
 }
 
 .reviews {
@@ -91,7 +91,7 @@ div#body {
     padding: 0px 10px 10px 10px;
 }
 
-#url {
+.url {
     padding: 10px;
 }
 
