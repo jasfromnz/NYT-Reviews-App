@@ -11,10 +11,13 @@ A web app that searches for and displays New York Times book reviews by book tit
 
 ## Screenshots
 ![wireframe](./wireframe.png)
+![screenshot](./screenshot.png)
 
 ## Getting Started
-[Click here](#) to get started
+[Click here](https://jasfromnz.github.io/NYT-Reviews-App/) to get started
+
+Search by full title or author name
 
 ## Future Enhancements
-- Add CSS Styling
-- Add search by author
+- Add Search by ISBN
+- Add Search for Best Sellers Lists
