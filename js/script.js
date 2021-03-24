@@ -12,18 +12,16 @@ let reviews;
 // cached element references
 
 let $reviews = $('section.reviews');
-let $unpinnedCards = $('article.reviews :not(.pinned)');
 let $titleSubmit = $('input.title:submit');
 let $titleInput = $('input.title:text');
 let $authorSubmit = $('input.author:submit');
 let $authorInput = $('input.author:text');
-let $pinButton = $('button#pin');
 
 // event listeners
 
 $titleSubmit.on('click', handleTitleClick);
 $authorSubmit.on('click', handleAuthorClick);
-$pinButton.on('click', handlePinClick);
+$('button#pin').on('click', handlePinClick);
 
 // functions
 
@@ -39,13 +37,13 @@ function handleAuthorClick() {
     getAuthorData();
 }
 
-function handlePinClick(e) {
-    if ($(this).hasClass('pinned')) {
+function handlePinClick() {
+    if ($(this).closest('article').hasClass('pinned')) {
         $(this).text('');
-        $(this).removeClass('pinned');
+        $(this).closest('article').removeClass('pinned');
     } else {
         $(this).text('X');
-        $(this).addClass('pinned');
+        $(this).closest('article').addClass('pinned');
     };
 }
 
@@ -79,7 +77,7 @@ function render() {
     };
 
     // clear previous results
-    $unpinnedCards.remove();
+    $('section.reviews').children().filter(':not(.pinned)').remove();
 
     // create html elements for each result
     const html = reviews.map(function (review) {
@@ -110,4 +108,5 @@ function render() {
 
     
     $reviews.append(html);
+    console.log("i ran!");
 }
