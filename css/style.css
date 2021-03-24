@@ -62,8 +62,23 @@ article * {
     background-color: white;
 }
 
-#header {
+div#header {
+    width: 100%;
     padding: 5px;
+}
+
+div#top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button#pin {
+    justify-self:flex-end;
+    padding: 0;
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
 }
 
 h2, h3 {
@@ -82,6 +97,7 @@ h3 {
 }
 
 div#body {
+    width: 100%;
     font-size: 18px;
     padding: 5px 5px 15px 5px;
 }

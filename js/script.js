@@ -11,16 +11,19 @@ let reviews;
 
 // cached element references
 
-let $reviews = $('.reviews');
+let $reviews = $('section.reviews');
+let $unpinnedCards = $('article.reviews :not(.pinned)');
 let $titleSubmit = $('input.title:submit');
 let $titleInput = $('input.title:text');
 let $authorSubmit = $('input.author:submit');
 let $authorInput = $('input.author:text');
+let $pinButton = $('button#pin');
 
 // event listeners
 
 $titleSubmit.on('click', handleTitleClick);
 $authorSubmit.on('click', handleAuthorClick);
+$pinButton.on('click', handlePinClick);
 
 // functions
 
@@ -34,6 +37,16 @@ function handleAuthorClick() {
     userInput = $authorInput.val();
     $authorInput.val('');
     getAuthorData();
+}
+
+function handlePinClick(e) {
+    if ($(this).hasClass('pinned')) {
+        $(this).text('');
+        $(this).removeClass('pinned');
+    } else {
+        $(this).text('X');
+        $(this).addClass('pinned');
+    };
 }
 
 function getTitleData() {
@@ -66,7 +79,7 @@ function render() {
     };
 
     // clear previous results
-    $reviews.empty();
+    $unpinnedCards.remove();
 
     // create html elements for each result
     const html = reviews.map(function (review) {
@@ -78,12 +91,14 @@ function render() {
                 review[key] = 'Unavailable';
             };
         });
-        console.log(typeof review.byline);
         return `
-            <article class="card">
+            <article class="reviews">
                 <div id="header">
-                    <h2>${review.book_title} by ${review.book_author}</h2>
-                    <h3 id="byline">review by: ${review.byline.toLowerCase()}, ${review.publication_dt}</h3>
+                    <div id="top">
+                        <h2>${review.book_title} by ${review.book_author}</h2>
+                        <button type="submit" id="pin"></button>
+                    </div>
+                    <h3>review by: ${review.byline.toLowerCase()}, ${review.publication_dt}</h3>
                 </div>
                 <div id="body">
                     <p id="summary">Summary: ${review.summary}</p>
