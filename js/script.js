@@ -21,7 +21,7 @@ let $authorInput = $('input.author:text');
 
 $titleSubmit.on('click', handleTitleClick);
 $authorSubmit.on('click', handleAuthorClick);
-$('button#pin').on('click', handlePinClick);
+$reviews.on('click', handlePinClick);
 
 // functions
 
@@ -37,13 +37,21 @@ function handleAuthorClick() {
     getAuthorData();
 }
 
-function handlePinClick() {
-    if ($(this).closest('article').hasClass('pinned')) {
-        $(this).text('');
-        $(this).closest('article').removeClass('pinned');
+function handlePinClick(e) {
+    if (e.target.id !== "pin") {
+        console.log(e.target);
+        console.log(this);
+        return;
+    };
+
+    console.log(e.target);
+    console.log(this);
+    if ($(e.target).closest('article').hasClass('pinned')) {
+        $(e.target).text('');
+        $(e.target).closest('article').removeClass('pinned');
     } else {
-        $(this).text('X');
-        $(this).closest('article').addClass('pinned');
+        $(e.target).text('X');
+        $(e.target).closest('article').addClass('pinned');
     };
 }
 

@@ -7,9 +7,8 @@ body {
     display: grid;
     grid-template-rows: 200px 1fr 30px;
     height: 100vh;
-    /*background-image: linear-gradient(rgb(16, 146, 163), rgb(10, 82, 76));*/
     margin: 0;
-    background-color: darkturquoise;
+    background-color: lightskyblue;
 }
 
 header {
@@ -55,7 +54,7 @@ article {
     margin: 10px;
     background-color: white;
     width: 60vw;
-    box-shadow: 10px 5px 5px darkcyan;
+    box-shadow: 10px 5px 5px midnightblue;
 }
 
 article * {
