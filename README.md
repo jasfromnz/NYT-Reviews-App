@@ -20,5 +20,5 @@ Search by full title or author name.
 Click the box in the upper right corner of a review to 'pin' it and keep the review in the results list when searching again.
 
 ## Future Enhancements
-- Add Search by ISBN
-- Add Search for Best Sellers Lists
+- Save pinned reviews in local storage
+- Add search for Best Sellers Lists
